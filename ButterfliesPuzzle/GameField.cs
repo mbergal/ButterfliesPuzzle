@@ -17,6 +17,13 @@ namespace ButterfliesPuzzle
                 };
             }
 
+        public GameField(Card[,] cards)
+            {
+            for( int i = 0; i < 3; ++i )
+                for( int j = 0; j < 3; ++j )
+                    _field[i,j] = cards[i,j];
+            }
+
         public override string ToString()
             {
             var sb = new StringBuilder();
@@ -68,12 +75,6 @@ namespace ButterfliesPuzzle
             return true;
             }
 
-        public void Place(Card[,] cards)
-            {
-            for( int i = 0; i < 3; ++i )
-                for( int j = 0; j < 3; ++j )
-                    _field[i,j] = cards[i,j];
-            }
 
         public Card Get(Position position)
             {
